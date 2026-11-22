@@ -1,0 +1,6 @@
+<!DOCTYPE html><meta charset="utf-8"><title>مدينتنا</title><body style="background:#06121f;color:#fff;font:20px sans-serif;text-align:center;padding-top:40vh">مدينتنا...<script>
+(async()=>{const R='mabousaid12-star/mabousaid12-star.github.io',go=f=>location.replace(encodeURI(f)+location.search+location.hash);
+try{const fs=(await (await fetch('https://api.github.com/repos/'+R+'/contents')).json()).filter(x=>x.type=='file'&&/\.html$/i.test(x.name)&&x.name!='index.html');
+let best=null,bt=0;for(const f of fs){const c=await (await fetch('https://api.github.com/repos/'+R+'/commits?per_page=1&path='+encodeURIComponent(f.name))).json();const t=Date.parse(c[0].commit.committer.date);if(t>bt){bt=t;best=f.name}}
+if(best)return go(best)}catch(e){}go('Index html.html')})()
+</script>
